@@ -1,0 +1,96 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Full-width header (edge-to-edge) */
+.main-header {
+    width: 100%;
+    background: #673c3c;
+    color: rgb(157, 103, 103);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header nav a {
+    color: rgb(255, 158, 158);
+    text-decoration: none;
+    margin-left: 1rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem); /* Responsive text */
+}
+
+/* Full-width hero banner (edge-to-edge) */
+.hero-banner {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-banner h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(62, 40, 40);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive heading */
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+}
+
+/* Grid section - space ONLY on sides */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: rgb(138, 107, 107);
+    padding: 0 rem; /* Space ONLY on left/right */
+    max-width: 1400px;
+    margin: 0 auto; /* Center grid */
+}
+
+/* Grid items - NO gap between boxes */
+.text-box {
+    padding: 2rem;
+    border: 1px solid #765a5a;
+    font-size: clamp(0.9rem, 1.1vw, 1.1rem); /* Responsive text */
+    min-width: 0; /* Prevent text overflow */
+}
+
+.image-box {
+    position: relative;
+    overflow: hidden;
+    padding-top: 75%; /* 4:3 aspect ratio */
+}
+
+.image-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr; /* Stack boxes */
+        padding: 0 1rem; /* Smaller side space on mobile */
+    }
+}
